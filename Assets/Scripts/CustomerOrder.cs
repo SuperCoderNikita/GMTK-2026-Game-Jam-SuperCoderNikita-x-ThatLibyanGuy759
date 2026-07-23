@@ -45,6 +45,9 @@ public class CustomerOrder : MonoBehaviour
         if (!matched) return DeliveryResult.WrongItem;
 
         bool complete = (!wantsBurger || receivedBurger) && (!wantsSoda || receivedSoda);
+
+        UpdateIcons(); 
+
         return complete ? DeliveryResult.OrderComplete : DeliveryResult.ItemAccepted;
     }
 }

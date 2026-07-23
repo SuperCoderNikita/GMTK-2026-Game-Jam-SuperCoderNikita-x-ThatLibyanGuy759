@@ -156,10 +156,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5b0b9eee2dda3439fa75ecbbcbf722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  minBaseTime: 75
+  maxBaseTime: 120
   timeToCook: 90
   timerText: {fileID: 889238707790723614}
   isDisapointed: 0
   isServed: 0
+  difficultyRampRate: 0.5
+  minStartingTime: 10
 --- !u!114 &3554991109124837205
 MonoBehaviour:
   m_ObjectHideFlags: 0

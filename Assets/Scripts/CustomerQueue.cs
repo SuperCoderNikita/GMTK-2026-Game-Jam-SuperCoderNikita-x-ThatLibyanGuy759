@@ -75,7 +75,7 @@ public class CustomerQueue : MonoBehaviour
 
        if (result == DeliveryResult.WrongItem)
         {
-            score.score -= 0.5f;
+            score.score -= 2.0f;
 
             frontTimer.isDisapointed = true;
             if (frontTimer.timerText != null)
@@ -123,7 +123,7 @@ public class CustomerQueue : MonoBehaviour
 
             if (timer.isDisapointed == true)
             {
-                score.score -= 0.5f;
+                score.score -= 1f;
                 GameObject leavingCustomer = queue[i];
                 queue.RemoveAt(i);
                 StartCoroutine(LeaveAndDestroy(leavingCustomer));
