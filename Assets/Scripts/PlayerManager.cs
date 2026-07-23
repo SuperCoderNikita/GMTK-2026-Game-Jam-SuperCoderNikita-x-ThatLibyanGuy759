@@ -1,6 +1,6 @@
 using UnityEngine;
 using UnityEngine.InputSystem; 
-
+public enum HeldItem { None, RawMeat, CookedMeat, Bread, Burger, Soda }
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
@@ -8,6 +8,9 @@ public class PlayerManager : MonoBehaviour
     private Rigidbody2D rb;
     private Vector2 moveInput;
     public bool hasFood;
+    public HeldItem heldItem = HeldItem.None;
+    public GameObject currentHeldItem;
+    public Transform itemHoldPoint;
 
     private void Start()
     {
