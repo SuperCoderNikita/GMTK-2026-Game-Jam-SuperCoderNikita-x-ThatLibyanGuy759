@@ -9,13 +9,13 @@ public class CustomerQueue : MonoBehaviour
 
     public Transform[] queueSlots;
 
-    public Transform exitPoint;
-
+    public Transform exitPointLeft;
+    public Transform exitPointRight;
     public float spawnInterval = 3f;
     public float serveRadius = 1.5f;
 
     public PlayerManager player;
-    public CustomerTimer timer;
+    public ScoreManager score;
 
     private List<GameObject> queue = new List<GameObject>();
 
@@ -61,22 +61,57 @@ public class CustomerQueue : MonoBehaviour
 
     public void ServeFrontCustomer()
     {
-        if (!player.hasFood) return;
-
+        if (player.heldItem == HeldItem.None) return;
         if (queue.Count == 0) return;
 
-        GameObject front = queue[0];
-
         float distance = Vector2.Distance(player.transform.position, queueSlots[0].position);
-        if (distance > serveRadius) return; 
+        if (distance > serveRadius) return;
+
+        GameObject front = queue[0];
+        CustomerOrder order = front.GetComponent<CustomerOrder>();
         CustomerTimer frontTimer = front.GetComponent<CustomerTimer>();
 
-        queue.RemoveAt(0);
-        StartCoroutine(LeaveAndDestroy(front));
-        RefreshQueuePositions();
+        DeliveryResult result = order.DeliverItem(player.heldItem);
 
-        player.hasFood = false;
-        frontTimer.isServed = true;
+       if (result == DeliveryResult.WrongItem)
+        {
+            score.score -= 0.5f;
+
+            frontTimer.isDisapointed = true;
+            if (frontTimer.timerText != null)
+                frontTimer.timerText.text = ">:-(";
+
+           
+            if (player.currentHeldItem != null)
+            {
+                Destroy(player.currentHeldItem);
+                player.currentHeldItem = null;
+            }
+            player.heldItem = HeldItem.None;
+
+            queue.RemoveAt(0);
+            StartCoroutine(LeaveAndDestroy(front));
+            RefreshQueuePositions();
+            return;
+        }
+
+        if (player.currentHeldItem != null)
+        {
+            Destroy(player.currentHeldItem);
+            player.currentHeldItem = null;
+        }
+        player.heldItem = HeldItem.None;
+
+        if (result == DeliveryResult.OrderComplete)
+        {
+            queue.RemoveAt(0);
+            StartCoroutine(LeaveAndDestroy(front));
+            RefreshQueuePositions();
+
+            frontTimer.isServed = true;
+            score.score += 0.5f;
+        }
+        
     }
 
     void RefreshQueuePositions()
@@ -88,6 +123,7 @@ public class CustomerQueue : MonoBehaviour
 
             if (timer.isDisapointed == true)
             {
+                score.score -= 0.5f;
                 GameObject leavingCustomer = queue[i];
                 queue.RemoveAt(i);
                 StartCoroutine(LeaveAndDestroy(leavingCustomer));
@@ -100,10 +136,12 @@ public class CustomerQueue : MonoBehaviour
 
     IEnumerator LeaveAndDestroy(GameObject customer)
     {
-        CustomerManager customerMovement = customer.GetComponent<CustomerManager>();
-        customerMovement.SetTarget(exitPoint.position);
+        Transform chosenExit = (Random.value < 0.5f) ? exitPointLeft : exitPointRight;
 
-        while (Vector2.Distance(customer.transform.position, exitPoint.position) > 0.05f)
+        CustomerManager customerMovement = customer.GetComponent<CustomerManager>();
+        customerMovement.SetTarget(chosenExit.position);
+
+        while (Vector2.Distance(customer.transform.position, chosenExit.position) > 0.05f)
         {
             yield return null;
         }
