@@ -2850,8 +2850,8 @@ Transform:
   m_GameObject: {fileID: 974216959}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -0.07800007, y: 0.73600006, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalPosition: {x: -0.011, y: 0.204, z: 0}
+  m_LocalScale: {x: 0.1667, y: 0.1667, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1676895760}
@@ -4408,6 +4408,7 @@ GameObject:
   - component: {fileID: 1676895757}
   - component: {fileID: 1676895756}
   - component: {fileID: 1676895761}
+  - component: {fileID: 1676895762}
   m_Layer: 0
   m_Name: Proto player
   m_TagString: Player
@@ -4431,6 +4432,7 @@ MonoBehaviour:
   hasFood: 0
   heldItem: 0
   currentHeldItem: {fileID: 0}
+  animator: {fileID: 1676895762}
   itemHoldPoint: {fileID: 974216960}
 --- !u!61 &1676895757
 BoxCollider2D:
@@ -4466,17 +4468,17 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0.0036854893, y: -0.054668292}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 1}
+    oldSize: {x: 0.21, y: 0.36}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 1, y: 1}
+  m_Size: {x: 0.13874689, y: 0.19415227}
   m_EdgeRadius: 0
 --- !u!50 &1676895758
 Rigidbody2D:
@@ -4554,7 +4556,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 7482667652216324306, guid: 016e7b2336ffa8e41b2bd61bae23f212, type: 3}
+  m_Sprite: {fileID: -5995659156905311187, guid: 7f77c3d61fc15f04baf3073086c935e4, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -4575,7 +4577,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0.06, y: -1.71, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 6, y: 6, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 974216960}
@@ -4811,6 +4813,28 @@ MonoBehaviour:
   m_DefaultActionMap: Player
   m_SplitScreenIndex: -1
   m_Camera: {fileID: 0}
+--- !u!95 &1676895762
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1676895755}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 561b8f1f908fafc4fa60a1201b0dba75, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
 --- !u!1 &1735866682
 GameObject:
   m_ObjectHideFlags: 0
