@@ -14,8 +14,12 @@ public class CustomerTimer : MonoBehaviour
     private float reduction;
     private float rolledBaseTime;
 
+    public Animator animator;
+
     void Awake()
     {
+        animator = GetComponent<Animator>();
+
         isServed = false;
         isDisapointed = false;
 
@@ -24,15 +28,21 @@ public class CustomerTimer : MonoBehaviour
         timeToCook = Mathf.Max(rolledBaseTime - reduction, minStartingTime);
     }
 
+    public void MarkServed()
+    {
+        isServed = true;
+        timerText.text = ":D";
+        if (animator != null) animator.SetTrigger("GoHappy");
+    }
+
     void Update()
     {
         if (isDisapointed)
             return; 
 
-        if (isServed == true)
+        if (isServed)
         {
             timeToCook = 999;
-            timerText.text = ":D";
             return;
         }
 
@@ -41,13 +51,19 @@ public class CustomerTimer : MonoBehaviour
         if (timeToCook <= 0)
         {
             timeToCook = 0;
-            isDisapointed = true;
-            timerText.text = ">:-(";
+            MarkDisappointed();
             return;
-        } 
+        }
 
         int minutes = Mathf.FloorToInt(timeToCook / 60);
         int seconds = Mathf.FloorToInt(timeToCook % 60);
         timerText.text = string.Format("{0}:{1:00}", minutes, seconds);
+    }
+
+    public void MarkDisappointed()
+    {
+        isDisapointed = true;
+        timerText.text = ">:-(";
+        if (animator != null) animator.SetTrigger("GoMad");
     }
 }

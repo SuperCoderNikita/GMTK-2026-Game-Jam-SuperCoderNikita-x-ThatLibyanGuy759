@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class CustomerQueue : MonoBehaviour
 {
-    public GameObject customerPrefab;
+    public GameObject[] customerPrefabs;
     public Transform spawnPoint;
 
     public Transform[] queueSlots;
@@ -50,10 +50,11 @@ public class CustomerQueue : MonoBehaviour
         if (queue.Count >= queueSlots.Length)
             return;
 
-        GameObject obj = Instantiate(customerPrefab, spawnPoint.position, Quaternion.identity);
+        GameObject prefabToSpawn = customerPrefabs[Random.Range(0, customerPrefabs.Length)];
+        GameObject obj = Instantiate(prefabToSpawn, spawnPoint.position, Quaternion.identity);
 
-        CustomerManager customerMovement = obj.GetComponent<CustomerManager>();
-        if (customerMovement == null) customerMovement = obj.AddComponent<CustomerManager>();
+        CustomerManager mover = obj.GetComponent<CustomerManager>();
+        if (mover == null) mover = obj.AddComponent<CustomerManager>();
 
         queue.Add(obj);
         RefreshQueuePositions();
@@ -77,10 +78,7 @@ public class CustomerQueue : MonoBehaviour
         {
             score.score -= 2.0f;
 
-            frontTimer.isDisapointed = true;
-            if (frontTimer.timerText != null)
-                frontTimer.timerText.text = ">:-(";
-
+            frontTimer.MarkDisappointed();
            
             if (player.currentHeldItem != null)
             {
@@ -108,7 +106,7 @@ public class CustomerQueue : MonoBehaviour
             StartCoroutine(LeaveAndDestroy(front));
             RefreshQueuePositions();
 
-            frontTimer.isServed = true;
+            frontTimer.MarkServed();
             score.score += 0.5f;
         }
         
@@ -137,6 +135,10 @@ public class CustomerQueue : MonoBehaviour
     IEnumerator LeaveAndDestroy(GameObject customer)
     {
         Transform chosenExit = (Random.value < 0.5f) ? exitPointLeft : exitPointRight;
+
+        SpriteRenderer sr = customer.GetComponent<SpriteRenderer>();
+        if (sr != null)
+            sr.flipX = (chosenExit == exitPointLeft);
 
         CustomerManager customerMovement = customer.GetComponent<CustomerManager>();
         customerMovement.SetTarget(chosenExit.position);
