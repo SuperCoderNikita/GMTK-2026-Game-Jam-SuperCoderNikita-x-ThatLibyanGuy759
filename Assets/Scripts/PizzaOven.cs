@@ -8,7 +8,7 @@ public class PizzaOven : MonoBehaviour
     public PlayerManager player;
     public Transform hoverPoint;      // where the finished pizza waits, above the oven
     public GameObject pizzaPrefab;
-    public float cookTime = 4f;
+    private float cookTime = 4f;
 
     private bool hasTomato = false;
     private bool hasCheese = false;
@@ -16,6 +16,7 @@ public class PizzaOven : MonoBehaviour
     private bool isProcessing = false;
     private GameObject hoveringItem;  
     public TextMeshPro cooldownText;
+    public float baseCookTime = 4f;
 
     void Update()
     {
@@ -30,7 +31,6 @@ public class PizzaOven : MonoBehaviour
             cooldownText.text = "";
         }
     }
-    
     public void Interact()
     {
         float distance = Vector2.Distance(player.transform.position, transform.position);
@@ -91,13 +91,13 @@ public class PizzaOven : MonoBehaviour
     IEnumerator CookPizza()
     {
         isProcessing = true;
+        cookTime = baseCookTime; // reset the countdown fresh for this cook
 
-        yield return new WaitForSeconds(cookTime);
+        yield return new WaitForSeconds(baseCookTime); // use the fixed value, not the draining one
 
         hoveringItem = Instantiate(pizzaPrefab, hoverPoint.position, Quaternion.identity, hoverPoint);
         isProcessing = false;
 
-        // reset for the next pizza
         hasTomato = false;
         hasCheese = false;
         hasBread = false;

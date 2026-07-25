@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: e19b7f8ce8de893409be330c707ee57c
+guid: 09fe7d65aa299284c8784e35b52ea949
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 4363264087996620289
-    second: npc_5_forward_0
+      213: 5953051028498630171
+    second: star ranking_0
   - first:
-      213: 659326642619179786
-    second: npc_5_forward_1
+      213: -1338829496571629394
+    second: star ranking_1
+  - first:
+      213: -6089079408112180054
+    second: star ranking_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: npc_5_forward_0
+      name: star ranking_0
       rect:
         serializedVersion: 2
         x: 1
-        y: 1
-        width: 21
-        height: 27
+        y: 5
+        width: 30
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,20 +121,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 10ed14a029d6d8c30800000000000000
-      internalID: 4363264087996620289
+      spriteID: b164f6bae5c7d9250800000000000000
+      internalID: 5953051028498630171
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: npc_5_forward_1
+      name: star ranking_1
       rect:
         serializedVersion: 2
-        x: 24
-        y: 1
-        width: 21
-        height: 27
+        x: 33
+        y: 5
+        width: 30
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -140,8 +143,30 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: a0364449616662900800000000000000
-      internalID: 659326642619179786
+      spriteID: ea078029aa58b6de0800000000000000
+      internalID: -1338829496571629394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: star ranking_2
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 6
+        width: 28
+        height: 22
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aa4e3562a8e3f7ba0800000000000000
+      internalID: -6089079408112180054
       vertices: []
       indices: 
       edges: []
@@ -150,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: bd29832407ac1eb43b242d29bf93595b
+    spriteID: f24bd2607e8983546b4001926a59672d
     internalID: 0
     vertices: []
     indices: 
@@ -162,8 +187,9 @@ TextureImporter:
       - key: SpriteEditor.SliceSettings
         value: '{"sliceOnImport":false,"gridCellCount":{"x":1.0,"y":1.0},"gridSpriteSize":{"x":64.0,"y":64.0},"gridSpriteOffset":{"x":0.0,"y":0.0},"gridSpritePadding":{"x":0.0,"y":0.0},"pivot":{"x":0.5,"y":0.5},"pivotPixels":{"x":0.0,"y":0.0},"autoSlicingMethod":0,"spriteAlignment":0,"pivotUnitMode":0,"slicingType":0,"keepEmptyRects":false,"isAlternate":false}'
     nameFileIdTable:
-      npc_5_forward_0: 4363264087996620289
-      npc_5_forward_1: 659326642619179786
+      star ranking_0: 5953051028498630171
+      star ranking_1: -1338829496571629394
+      star ranking_2: -6089079408112180054
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -197,9 +197,9 @@ GameObject:
   - component: {fileID: 5825835027224484943}
   - component: {fileID: 4360277085440989408}
   - component: {fileID: 3554991109124837205}
-  - component: {fileID: 8580765630603836545}
+  - component: {fileID: 2556350294813587933}
   m_Layer: 0
-  m_Name: NPC 4
+  m_Name: NPC 5
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -274,7 +274,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 368340082673714041, guid: 64794be10d8a85e43bd12791af331910, type: 3}
+  m_Sprite: {fileID: 4363264087996620289, guid: e19b7f8ce8de893409be330c707ee57c, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -323,7 +323,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.22, y: 0.29}
+    oldSize: {x: 0.21, y: 0.27}
     newSize: {x: 1, y: 1}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -371,7 +371,7 @@ MonoBehaviour:
   sodaIcon: {fileID: 5034727623646012559}
   pizzaIcon: {fileID: 196204636383260726}
   orderBubble: {fileID: 4180011635231656495}
---- !u!95 &8580765630603836545
+--- !u!95 &2556350294813587933
 Animator:
   serializedVersion: 7
   m_ObjectHideFlags: 0
@@ -381,7 +381,7 @@ Animator:
   m_GameObject: {fileID: 4484977567492166241}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: ba9dc6b564f006a44b3331b29d501234, type: 2}
+  m_Controller: {fileID: 9100000, guid: 23e036d4f3795a94eaacd01245623b73, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0

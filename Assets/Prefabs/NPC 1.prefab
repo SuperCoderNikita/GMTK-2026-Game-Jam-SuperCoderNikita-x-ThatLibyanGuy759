@@ -251,13 +251,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5b0b9eee2dda3439fa75ecbbcbf722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  minBaseTime: 75
-  maxBaseTime: 120
+  minBaseTime: 120
+  maxBaseTime: 165
   timeToCook: 90
   timerText: {fileID: 889238707790723614}
   isDisapointed: 0
   isServed: 0
-  difficultyRampRate: 0.5
+  difficultyRampRate: 0.1
   minStartingTime: 10
   animator: {fileID: 0}
 --- !u!114 &3554991109124837205
@@ -335,8 +335,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -0, y: 0.2225}
-  m_SizeDelta: {x: 20, y: 5}
+  m_AnchoredPosition: {x: 0.13193, y: 0.2225}
+  m_SizeDelta: {x: 49.54289, y: 5}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!23 &2896484726428752559
 MeshRenderer:
@@ -363,7 +363,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -5749472045561324803, guid: 42d506bf5df52184bbc1cd6707345ade, type: 2}
+  - {fileID: 6528298254863767012, guid: acbd01161c817bf4e93c1362b387b9f6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -409,8 +409,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 0:00
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 42d506bf5df52184bbc1cd6707345ade, type: 2}
-  m_sharedMaterial: {fileID: -5749472045561324803, guid: 42d506bf5df52184bbc1cd6707345ade, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: acbd01161c817bf4e93c1362b387b9f6, type: 2}
+  m_sharedMaterial: {fileID: 6528298254863767012, guid: acbd01161c817bf4e93c1362b387b9f6, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -473,7 +473,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: 0, y: 0, z: -5.7514906, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   _SortingLayer: 0

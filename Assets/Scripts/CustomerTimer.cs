@@ -3,8 +3,8 @@ using TMPro;
 
 public class CustomerTimer : MonoBehaviour
 {
-    public float minBaseTime = 60f;
-    public float maxBaseTime = 120f;
+    public float minBaseTime =120f;
+    public float maxBaseTime = 165f;
     public float timeToCook;
     public TextMeshPro timerText; 
     public bool isDisapointed = false;
