@@ -1,5 +1,6 @@
 using UnityEngine;
 using System.Collections;
+using TMPro;
 
 public class PizzaOven : MonoBehaviour
 {
@@ -13,8 +14,23 @@ public class PizzaOven : MonoBehaviour
     private bool hasCheese = false;
     private bool hasBread = false;
     private bool isProcessing = false;
-    private GameObject hoveringItem;  // finished pizza sitting on the oven, waiting for pickup
+    private GameObject hoveringItem;  
+    public TextMeshPro cooldownText;
 
+    void Update()
+    {
+        if (isProcessing)
+        {
+            cookTime -= Time.deltaTime;
+            if (cookTime < 0) cookTime = 0;
+            cooldownText.text = cookTime.ToString("F1");
+        }
+        else
+        {
+            cooldownText.text = "";
+        }
+    }
+    
     public void Interact()
     {
         float distance = Vector2.Distance(player.transform.position, transform.position);
