@@ -35,8 +35,9 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 3913983682470648691}
-  - {fileID: 6297051418074339756}
-  - {fileID: 1542721007772517036}
+  - {fileID: 6910058898784006086}
+  - {fileID: 1289114965716562713}
+  - {fileID: 2600252946898124759}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2867131627725333444
@@ -165,6 +166,7 @@ MonoBehaviour:
   isServed: 0
   difficultyRampRate: 0.5
   minStartingTime: 10
+  animator: {fileID: 0}
 --- !u!114 &3554991109124837205
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -179,8 +181,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   wantsBurger: 0
   wantsSoda: 0
-  burgerIcon: {fileID: 6530702958784914297}
-  sodaIcon: {fileID: 1777498872610240633}
+  wantsPizza: 0
+  burgerIcon: {fileID: 6785433783996453580}
+  sodaIcon: {fileID: 1165335941266263571}
+  pizzaIcon: {fileID: 7772257958416719362}
 --- !u!95 &2722592731150250200
 Animator:
   serializedVersion: 7
@@ -384,7 +388,86 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 2896484726428752559}
   m_maskType: 0
---- !u!1001 &3522656717552692951
+--- !u!1001 &117042242208207788
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5056124144540581855}
+    m_Modifications:
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.044445213
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.039657895
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.073026754
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.065899946
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.134
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657045308004142510, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_Name
+      value: Proto pizza
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+--- !u!4 &2600252946898124759 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+  m_PrefabInstance: {fileID: 117042242208207788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7772257958416719362 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7657045308004142510, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+  m_PrefabInstance: {fileID: 117042242208207788}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1001 &3776829248575348578
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -406,7 +489,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: ab7b8397272a35140b4a16de947c5879, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.029802
+      value: 0.014901951
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: ab7b8397272a35140b4a16de947c5879, type: 3}
       propertyPath: m_LocalPosition.y
@@ -444,6 +527,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3201276052821248581, guid: ab7b8397272a35140b4a16de947c5879, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 7657045308004142510, guid: ab7b8397272a35140b4a16de947c5879, type: 3}
       propertyPath: m_Name
       value: proto  burger
@@ -453,17 +540,17 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: ab7b8397272a35140b4a16de947c5879, type: 3}
---- !u!4 &1542721007772517036 stripped
+--- !u!4 &1289114965716562713 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2705015259064659067, guid: ab7b8397272a35140b4a16de947c5879, type: 3}
-  m_PrefabInstance: {fileID: 3522656717552692951}
+  m_PrefabInstance: {fileID: 3776829248575348578}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &6530702958784914297 stripped
+--- !u!1 &6785433783996453580 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7657045308004142510, guid: ab7b8397272a35140b4a16de947c5879, type: 3}
-  m_PrefabInstance: {fileID: 3522656717552692951}
+  m_PrefabInstance: {fileID: 3776829248575348578}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &8280356016852284887
+--- !u!1001 &8822359250308383677
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -485,7 +572,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.032909
+      value: -0.0683
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalPosition.y
@@ -523,6 +610,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 3201276052821248581, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
+      propertyPath: m_SortingOrder
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4570680006996120774, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_SortingOrder
       value: 1
@@ -536,13 +627,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
---- !u!1 &1777498872610240633 stripped
+--- !u!1 &1165335941266263571 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7657045308004142510, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
-  m_PrefabInstance: {fileID: 8280356016852284887}
+  m_PrefabInstance: {fileID: 8822359250308383677}
   m_PrefabAsset: {fileID: 0}
---- !u!4 &6297051418074339756 stripped
+--- !u!4 &6910058898784006086 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
-  m_PrefabInstance: {fileID: 8280356016852284887}
+  m_PrefabInstance: {fileID: 8822359250308383677}
   m_PrefabAsset: {fileID: 0}
