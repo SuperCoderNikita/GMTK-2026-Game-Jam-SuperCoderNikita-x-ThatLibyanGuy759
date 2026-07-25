@@ -1,14 +1,10 @@
 fileFormatVersion: 2
-<<<<<<< HEAD
-guid: 07aa9813c7389b64db1eff7cc9ed3bf4
-=======
-guid: e367cf2ab8e49e248a12e1c81017b2d3
->>>>>>> de51379de9af1a42b67bbe9dfa52472468ba5a2b
+guid: cde70fbae0a9fc842a7f25bfb01fa54f
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -3325298644958038721
-    second: soda_rack_0
+      213: -5842753408287338776
+    second: tomato_box_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -41,11 +37,7 @@ TextureImporter:
   maxTextureSize: 2048
   textureSettings:
     serializedVersion: 2
-<<<<<<< HEAD
     filterMode: 0
-=======
-    filterMode: 1
->>>>>>> de51379de9af1a42b67bbe9dfa52472468ba5a2b
     aniso: 1
     mipBias: 0
     wrapU: 1
@@ -83,11 +75,7 @@ TextureImporter:
     maxTextureSize: 2048
     resizeAlgorithm: 0
     textureFormat: -1
-<<<<<<< HEAD
     textureCompression: 0
-=======
-    textureCompression: 1
->>>>>>> de51379de9af1a42b67bbe9dfa52472468ba5a2b
     compressionQuality: 50
     crunchedCompression: 0
     allowsAlphaSplitting: 0
@@ -112,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: soda_rack_0
+      name: tomato_box_0
       rect:
         serializedVersion: 2
-        x: 1
-        y: 4
-        width: 57
-        height: 38
+        x: 6
+        y: 6
+        width: 21
+        height: 22
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: f353037208a2ad1d0800000000000000
-      internalID: -3325298644958038721
+      spriteID: 8ee84dc3bbe5aeea0800000000000000
+      internalID: -5842753408287338776
       vertices: []
       indices: 
       edges: []
@@ -147,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      soda_rack_0: -3325298644958038721
+      tomato_box_0: -5842753408287338776
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
