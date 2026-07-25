@@ -1,7 +1,8 @@
-using System.Reflection;
 using UnityEngine;
 using UnityEngine.InputSystem; 
+
 public enum HeldItem { None, RawMeat, CookedMeat, Bread, Burger, Soda, Tomato, Cheese, Pizza }
+
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
@@ -14,21 +15,38 @@ public class PlayerManager : MonoBehaviour
     public Animator animator;
     public Transform itemHoldPoint;
 
+    // Hash string IDs for better performance
+    private static readonly int InputX = Animator.StringToHash("InputX");
+    private static readonly int InputY = Animator.StringToHash("InputY");
+
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        animator.GetComponent<Animator>();
+        
+        // Fix: Use GetComponent ONLY if animator wasn't assigned in the Inspector
+        if (animator == null)
+        {
+            animator = GetComponent<Animator>();
+        }
     }
 
     void Update()
     {
-        bool moving = moveInput.sqrMagnitude > 0.01f;   
-        animator.SetBool("IsMoving", moving);
+        bool moving = moveInput.sqrMagnitude > 0.01f;
 
         if (moving)
         {
-            animator.SetFloat("InputX", moveInput.x);
-            animator.SetFloat("InputY", moveInput.y);           
+            // Resume playing the animation walk cycle
+            animator.speed = 1f;
+
+            // Pass input values to drive the Blend Tree direction
+            animator.SetFloat(InputX, moveInput.x);
+            animator.SetFloat(InputY, moveInput.y);
+        }
+        else
+        {
+            // Freeze/pause the animator on the current frame
+            animator.speed = 0f;
         }
     }
 
