@@ -37,6 +37,7 @@ Transform:
   - {fileID: 3913983682470648691}
   - {fileID: 6297051418074339756}
   - {fileID: 1542721007772517036}
+  - {fileID: 7880946214950688052}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &2867131627725333444
@@ -180,8 +181,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   wantsBurger: 0
   wantsSoda: 0
+  wantsPizza: 0
   burgerIcon: {fileID: 6530702958784914297}
   sodaIcon: {fileID: 1777498872610240633}
+  pizzaIcon: {fileID: 0}
 --- !u!95 &8580765630603836545
 Animator:
   serializedVersion: 7
@@ -468,6 +471,80 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7657045308004142510, guid: ab7b8397272a35140b4a16de947c5879, type: 3}
   m_PrefabInstance: {fileID: 3522656717552692951}
   m_PrefabAsset: {fileID: 0}
+--- !u!1001 &5247990817952840015
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 5056124144540581855}
+    m_Modifications:
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalScale.x
+      value: 0.044445213
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalScale.y
+      value: 0.039657895
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalScale.z
+      value: 0.073026754
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0.0808
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.134
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7657045308004142510, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+      propertyPath: m_Name
+      value: Proto pizza
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+--- !u!4 &7880946214950688052 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
+  m_PrefabInstance: {fileID: 5247990817952840015}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1001 &8280356016852284887
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -490,7 +567,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.032909
+      value: -0.0534
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalPosition.y

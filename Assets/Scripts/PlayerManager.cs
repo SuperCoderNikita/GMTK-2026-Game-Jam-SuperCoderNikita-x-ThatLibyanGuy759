@@ -1,7 +1,7 @@
 using System.Reflection;
 using UnityEngine;
 using UnityEngine.InputSystem; 
-public enum HeldItem { None, RawMeat, CookedMeat, Bread, Burger, Soda }
+public enum HeldItem { None, RawMeat, CookedMeat, Bread, Burger, Soda, Tomato, Cheese, Pizza }
 public class PlayerManager : MonoBehaviour
 {
     [SerializeField] private float moveSpeed = 5f;
