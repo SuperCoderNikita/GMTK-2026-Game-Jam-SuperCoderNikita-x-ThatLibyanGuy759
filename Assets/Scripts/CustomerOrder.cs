@@ -11,6 +11,7 @@ public class CustomerOrder : MonoBehaviour
     public GameObject burgerIcon;
     public GameObject sodaIcon;
     public GameObject pizzaIcon;
+    public GameObject orderBubble;
 
     private bool receivedBurger;
     private bool receivedSoda;
@@ -62,6 +63,8 @@ public class CustomerOrder : MonoBehaviour
         bool complete = (!wantsBurger || receivedBurger)
                       && (!wantsSoda || receivedSoda)
                       && (!wantsPizza || receivedPizza);
+        if(complete) 
+            orderBubble.SetActive(false);
 
         UpdateIcons();
 
