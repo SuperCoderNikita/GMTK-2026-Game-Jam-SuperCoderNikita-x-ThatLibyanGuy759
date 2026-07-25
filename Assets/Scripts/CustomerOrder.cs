@@ -12,6 +12,7 @@ public class CustomerOrder : MonoBehaviour
     public GameObject sodaIcon;
     public GameObject pizzaIcon;
     public GameObject orderBubble;
+    public CustomerTimer status;
 
     private bool receivedBurger;
     private bool receivedSoda;
@@ -25,10 +26,21 @@ public class CustomerOrder : MonoBehaviour
         do { second = Random.Range(0, 3); } while (second == first);
 
         wantsBurger = (first == 0 || second == 0);
-        wantsSoda   = (first == 1 || second == 1);
-        wantsPizza  = (first == 2 || second == 2);
+        wantsSoda = (first == 1 || second == 1);
+        wantsPizza = (first == 2 || second == 2);
 
         UpdateIcons();
+    }
+
+    void Update()
+    {
+        if(status.isDisapointed)
+        {
+            burgerIcon.SetActive(false);
+            sodaIcon.SetActive(false);
+            pizzaIcon.SetActive(false);
+            orderBubble.SetActive(false);
+        }
     }
 
     void UpdateIcons()
@@ -60,9 +72,7 @@ public class CustomerOrder : MonoBehaviour
 
         if (!matched) return DeliveryResult.WrongItem;
 
-        bool complete = (!wantsBurger || receivedBurger)
-                      && (!wantsSoda || receivedSoda)
-                      && (!wantsPizza || receivedPizza);
+        bool complete = (!wantsBurger || receivedBurger) && (!wantsSoda || receivedSoda) && (!wantsPizza || receivedPizza);
         if(complete) 
             orderBubble.SetActive(false);
 

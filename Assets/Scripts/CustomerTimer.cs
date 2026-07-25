@@ -13,13 +13,14 @@ public class CustomerTimer : MonoBehaviour
     public float minStartingTime = 10f;
     private float reduction;
     private float rolledBaseTime;
+    private SpriteRenderer sr;
 
     public Animator animator;
 
     void Awake()
     {
         animator = GetComponent<Animator>();
-
+        sr = GetComponent<SpriteRenderer>();
         isServed = false;
         isDisapointed = false;
 
@@ -31,8 +32,9 @@ public class CustomerTimer : MonoBehaviour
     public void MarkServed()
     {
         isServed = true;
-        timerText.text = ":D";
+        timerText.text = "";
         if (animator != null) animator.SetTrigger("GoHappy");
+        sr.sortingOrder = -3;
     }
 
     void Update()
@@ -63,7 +65,8 @@ public class CustomerTimer : MonoBehaviour
     public void MarkDisappointed()
     {
         isDisapointed = true;
-        timerText.text = ">:-(";
+        timerText.text = "";
         if (animator != null) animator.SetTrigger("GoMad");
+        sr.sortingOrder = -3;
     }
 }
