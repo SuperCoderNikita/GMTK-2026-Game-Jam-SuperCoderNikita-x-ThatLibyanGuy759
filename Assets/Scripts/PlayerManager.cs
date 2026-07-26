@@ -15,6 +15,10 @@ public class PlayerManager : MonoBehaviour
     public Animator animator;
     public Transform itemHoldPoint;
 
+    public AudioSource audioSource;
+    public AudioClip pickupSound;
+
+    private HeldItem previousHeldItem = HeldItem.None;
 
     private static readonly int InputX = Animator.StringToHash("InputX");
     private static readonly int InputY = Animator.StringToHash("InputY");
@@ -26,6 +30,11 @@ public class PlayerManager : MonoBehaviour
         if (animator == null)
         {
             animator = GetComponent<Animator>();
+        }
+
+        if (audioSource == null)
+        {
+            audioSource = GetComponent<AudioSource>();
         }
     }
 
@@ -44,6 +53,14 @@ public class PlayerManager : MonoBehaviour
         {
             animator.speed = 0f;
         }
+
+       
+        if (previousHeldItem == HeldItem.None && heldItem != HeldItem.None)
+        {
+            if (audioSource != null && pickupSound != null)
+                audioSource.PlayOneShot(pickupSound);
+        }
+        previousHeldItem = heldItem;
     }
 
     void FixedUpdate()

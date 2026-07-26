@@ -14,6 +14,9 @@ public class CustomerTimer : MonoBehaviour
     private float reduction;
     private float rolledBaseTime;
     private SpriteRenderer sr;
+    public AudioSource audioSource;
+    public AudioClip servedSound;
+    public AudioClip disappointedSound;
 
     public Animator animator;
 
@@ -21,8 +24,12 @@ public class CustomerTimer : MonoBehaviour
     {
         animator = GetComponent<Animator>();
         sr = GetComponent<SpriteRenderer>();
+        audioSource = GetComponent<AudioSource>();
         isServed = false;
         isDisapointed = false;
+
+         if (audioSource == null)
+            audioSource = GetComponent<AudioSource>();
 
         RollTime();
     }
@@ -47,6 +54,12 @@ public class CustomerTimer : MonoBehaviour
         timerText.text = "";
         if (animator != null) animator.SetTrigger("GoHappy");
         sr.sortingOrder = 1;
+
+        if (audioSource != null)
+        {
+            if (servedSound != null)
+                audioSource.PlayOneShot(servedSound);
+        }
     }
 
     void Update()
@@ -80,5 +93,7 @@ public class CustomerTimer : MonoBehaviour
         timerText.text = "";
         if (animator != null) animator.SetTrigger("GoMad");
         sr.sortingOrder = 1;
+        if (audioSource != null && disappointedSound != null)
+           audioSource.PlayOneShot(disappointedSound);
     }
 }

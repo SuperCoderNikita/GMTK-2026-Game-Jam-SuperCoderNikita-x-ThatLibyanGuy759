@@ -4,11 +4,13 @@ public class GameOverManager : MonoBehaviour
 {
     public GameObject gameOverScreen;
     public ScoreManager score;
+    public GameObject music;
     void Update()
     {
         if (score.score <= 0 && !gameOverScreen.activeSelf)
         {
             gameOverScreen.SetActive(true);
+            music.SetActive(false);
             Time.timeScale = 0f;
         }
     }
