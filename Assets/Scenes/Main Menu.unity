@@ -1073,7 +1073,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 40.00006, y: -6}
+  m_AnchoredPosition: {x: 40.00006, y: -191}
   m_SizeDelta: {x: 202.5987, y: 34.3532}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &170190985
@@ -1571,7 +1571,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -4373184736405950995, guid: 1fc9b55690cca9c41b64e270da0df32a, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.6792453, g: 0.6792453, b: 0.6792453, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 2
@@ -1609,9 +1609,9 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 8300000, guid: a08b816162e39ed4583aa3fb699f4257, type: 3}
   m_PlayOnAwake: 1
-  m_Volume: 0.4
+  m_Volume: 0.3
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -6512,7 +6512,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: ORDER UP!
+  m_text: KITCHEN QUEUE
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: acbd01161c817bf4e93c1362b387b9f6, type: 2}
   m_sharedMaterial: {fileID: 6528298254863767012, guid: acbd01161c817bf4e93c1362b387b9f6, type: 2}
@@ -6539,8 +6539,8 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 300
-  m_fontSizeBase: 300
+  m_fontSize: 200
+  m_fontSizeBase: 200
   m_fontWeight: 400
   m_enableAutoSizing: 0
   m_fontSizeMin: 18
@@ -10153,7 +10153,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: -2926550795283034269, guid: 831389fc0e428b848b37d8864cb4c0da, type: 3}
+  m_Sprite: {fileID: 4712494112951876628, guid: bcef70f4865ea2646aa98138ad94493c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -10631,7 +10631,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &1857005001
 MonoBehaviour:
   m_ObjectHideFlags: 0
