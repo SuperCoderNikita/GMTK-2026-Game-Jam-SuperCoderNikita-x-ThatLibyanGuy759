@@ -18,6 +18,8 @@ public class PizzaOven : MonoBehaviour
     private GameObject hoveringItem;  
     public TextMeshPro cooldownText;
     public float baseCookTime = 4f;
+    public AudioSource audioSource;
+    public AudioClip ding;
 
     void Update()
     {
@@ -98,7 +100,8 @@ public class PizzaOven : MonoBehaviour
 
         hoveringItem = Instantiate(checkPrefab, hoverPoint.position, Quaternion.identity, hoverPoint);
         isProcessing = false;
-
+        audioSource.PlayOneShot(ding);
+        
         hasTomato = false;
         hasCheese = false;
         hasBread = false;
