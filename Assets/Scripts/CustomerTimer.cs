@@ -34,7 +34,7 @@ public class CustomerTimer : MonoBehaviour
         isServed = true;
         timerText.text = "";
         if (animator != null) animator.SetTrigger("GoHappy");
-        sr.sortingOrder = -3;
+        sr.sortingOrder = 1;
     }
 
     void Update()
@@ -67,6 +67,6 @@ public class CustomerTimer : MonoBehaviour
         isDisapointed = true;
         timerText.text = "";
         if (animator != null) animator.SetTrigger("GoMad");
-        sr.sortingOrder = -3;
+        sr.sortingOrder = 1;
     }
 }

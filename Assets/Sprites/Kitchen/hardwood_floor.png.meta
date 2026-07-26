@@ -103,10 +103,10 @@ TextureImporter:
       name: hardwood_floor_0
       rect:
         serializedVersion: 2
-        x: 37
-        y: 28
+        x: 12
+        y: 10
         width: 38
-        height: 25
+        height: 24
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}

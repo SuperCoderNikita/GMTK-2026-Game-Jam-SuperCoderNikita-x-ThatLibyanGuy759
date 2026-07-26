@@ -15,7 +15,7 @@ public class PlayerManager : MonoBehaviour
     public Animator animator;
     public Transform itemHoldPoint;
 
-    // Hash string IDs for better performance
+
     private static readonly int InputX = Animator.StringToHash("InputX");
     private static readonly int InputY = Animator.StringToHash("InputY");
 
@@ -23,7 +23,6 @@ public class PlayerManager : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         
-        // Fix: Use GetComponent ONLY if animator wasn't assigned in the Inspector
         if (animator == null)
         {
             animator = GetComponent<Animator>();
@@ -36,16 +35,13 @@ public class PlayerManager : MonoBehaviour
 
         if (moving)
         {
-            // Resume playing the animation walk cycle
             animator.speed = 1f;
 
-            // Pass input values to drive the Blend Tree direction
             animator.SetFloat(InputX, moveInput.x);
             animator.SetFloat(InputY, moveInput.y);
         }
         else
         {
-            // Freeze/pause the animator on the current frame
             animator.speed = 0f;
         }
     }
