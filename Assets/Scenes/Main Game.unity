@@ -4432,8 +4432,8 @@ MonoBehaviour:
     maxPatience: 60
   - minNpcs: 4
     maxNpcs: 5
-    minPatience: 45
-    maxPatience: 50
+    minPatience: 50
+    maxPatience: 55
   - minNpcs: 5
     maxNpcs: 6
     minPatience: 45
