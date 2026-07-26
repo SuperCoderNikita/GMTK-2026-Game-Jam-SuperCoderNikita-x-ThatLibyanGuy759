@@ -31,21 +31,12 @@ public class CustomerTimer : MonoBehaviour
          if (audioSource == null)
             audioSource = GetComponent<AudioSource>();
 
-        RollTime();
-    }
-
-    void RollTime()
-    {
-        rolledBaseTime = Random.Range(minBaseTime, maxBaseTime);
-        reduction = Time.timeSinceLevelLoad * difficultyRampRate;
-        timeToCook = Mathf.Max(rolledBaseTime - reduction, minStartingTime);
     }
 
     public void Initialize(float minTime, float maxTime)
     {
         minBaseTime = minTime;
         maxBaseTime = maxTime;
-        RollTime();
     }
 
     public void MarkServed()

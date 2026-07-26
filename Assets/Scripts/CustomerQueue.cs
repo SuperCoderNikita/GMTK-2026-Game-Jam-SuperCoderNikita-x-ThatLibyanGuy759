@@ -55,8 +55,7 @@ public class CustomerQueue : MonoBehaviour
         if (mover == null) mover = obj.AddComponent<CustomerManager>();
 
         CustomerTimer timer = obj.GetComponent<CustomerTimer>();
-        if (timer != null)
-            timer.Initialize(currentMinPatience, currentMaxPatience);
+        timer.Initialize(currentMinPatience, currentMaxPatience);
 
         queue.Add(obj);
         RefreshQueuePositions();

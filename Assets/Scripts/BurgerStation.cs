@@ -15,6 +15,8 @@ public class BurgerStation : MonoBehaviour
     private bool hasMeat = false;
     private bool hasBread = false;
     private bool isProcessing = false;
+    public AudioSource audioSource;
+    public AudioClip ding;
     public TextMeshPro cooldownText;
     private GameObject hoveringItem;  
 
@@ -89,7 +91,7 @@ public class BurgerStation : MonoBehaviour
 
         hoveringItem = Instantiate(checkPrefab, hoverPoint.position, Quaternion.identity, hoverPoint);
         isProcessing = false;
-
+        audioSource.PlayOneShot(ding);
         hasMeat = false;
         hasBread = false;
     }
@@ -98,7 +100,6 @@ public class BurgerStation : MonoBehaviour
     {
         player.currentHeldItem = Instantiate(burgerPrefab, player.itemHoldPoint.position, Quaternion.identity, player.itemHoldPoint);
         player.heldItem = HeldItem.Burger;
-
         Destroy(hoveringItem);
         hoveringItem = null;
     }
