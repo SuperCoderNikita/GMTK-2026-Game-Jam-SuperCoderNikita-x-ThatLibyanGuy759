@@ -398,10 +398,10 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 5301332318014448594}
   - {fileID: 62478350329850980}
   - {fileID: 8206840394781071980}
   - {fileID: 3237630832930770494}
-  - {fileID: 727222700441044314}
   - {fileID: 1085882401359257103}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -477,8 +477,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5b0b9eee2dda3439fa75ecbbcbf722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  minBaseTime: 155
-  maxBaseTime: 165
+  minBaseTime: 50
+  maxBaseTime: 60
   timeToCook: 90
   timerText: {fileID: 5329157361931684042}
   isDisapointed: 0
@@ -502,7 +502,7 @@ MonoBehaviour:
   wantsSoda: 0
   wantsPizza: 0
   burgerIcon: {fileID: 2692424163426836151}
-  sodaIcon: {fileID: 5034727623646012559}
+  sodaIcon: {fileID: 458085747823165959}
   pizzaIcon: {fileID: 5698347184948759985}
   orderBubble: {fileID: 4180011635231656495}
   status: {fileID: 4360277085440989408}
@@ -611,7 +611,7 @@ GameObject:
   m_CorrespondingSourceObject: {fileID: 7657045308004142510, guid: 1776961122670ec4f84918c627e327f6, type: 3}
   m_PrefabInstance: {fileID: 2690850961523425311}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &3431101053342116129
+--- !u!1001 &7789037867174711209
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -621,15 +621,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25710317
+      value: 0.3229987
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25710317
+      value: 0.3229987
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.25710317
+      value: 0.3229987
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -673,7 +673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3201276052821248581, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7657045308004142510, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_Name
@@ -684,13 +684,13 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
---- !u!4 &727222700441044314 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
-  m_PrefabInstance: {fileID: 3431101053342116129}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &5034727623646012559 stripped
+--- !u!1 &458085747823165959 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7657045308004142510, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
-  m_PrefabInstance: {fileID: 3431101053342116129}
+  m_PrefabInstance: {fileID: 7789037867174711209}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &5301332318014448594 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
+  m_PrefabInstance: {fileID: 7789037867174711209}
   m_PrefabAsset: {fileID: 0}

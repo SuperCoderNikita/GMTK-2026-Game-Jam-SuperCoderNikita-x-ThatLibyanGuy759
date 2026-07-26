@@ -8,6 +8,7 @@ public class BurgerStation : MonoBehaviour
     public PlayerManager player;
     public Transform hoverPoint;      
     public GameObject burgerPrefab;
+    public GameObject checkPrefab;
     public float cookAndAssembleTime = 4f;
     private float countdownTimer = 0f;
 
@@ -86,7 +87,7 @@ public class BurgerStation : MonoBehaviour
 
         yield return new WaitForSeconds(cookAndAssembleTime);
 
-        hoveringItem = Instantiate(burgerPrefab, hoverPoint.position, Quaternion.identity, hoverPoint);
+        hoveringItem = Instantiate(checkPrefab, hoverPoint.position, Quaternion.identity, hoverPoint);
         isProcessing = false;
 
         hasMeat = false;

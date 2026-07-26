@@ -11,50 +11,52 @@ public class CustomerQueue : MonoBehaviour
 
     public Transform exitPointLeft;
     public Transform exitPointRight;
+
     public float spawnInterval = 3f;
     public float serveRadius = 1.5f;
 
     public PlayerManager player;
     public ScoreManager score;
+    public PhaseManager phaseManager;
+
+    // set by PhaseManager whenever the phase advances
+    private float currentMinPatience = 55f;
+    private float currentMaxPatience = 60f;
 
     private List<GameObject> queue = new List<GameObject>();
-
-    
-
-    public bool IsPlayerInRange(Vector2 playerPosition)
-    {
-        if (queueSlots.Length == 0) return false;
-        return Vector2.Distance(playerPosition, queueSlots[0].position) <= serveRadius;
-    }
-
-    void OnDrawGizmos()
-    {
-        if (queueSlots == null || queueSlots.Length == 0) return;
-
-        Gizmos.color = Color.yellow;
-        Gizmos.DrawWireSphere(queueSlots[0].position, serveRadius);
-    }
-
-    void Start()
-    {
-        InvokeRepeating(nameof(SpawnCustomer), spawnInterval, spawnInterval);
-    }
+    private int leavingCount = 0;
 
     void Update()
     {
         RefreshQueuePositions();
     }
 
-    void SpawnCustomer()
+    // Total customers this lane currently has, queued or mid-exit
+    public int ActiveCount => queue.Count + leavingCount;
+
+    // Whether this lane has a physical open slot to receive another customer
+    public bool HasSpace => queue.Count < queueSlots.Length;
+
+    public void SetPatienceRange(float minPatience, float maxPatience)
     {
-        if (queue.Count >= queueSlots.Length)
-            return;
+        currentMinPatience = minPatience;
+        currentMaxPatience = maxPatience;
+    }
+
+    // Called by PhaseManager when it decides this lane should receive a new customer
+    public void SpawnCustomer()
+    {
+        if (!HasSpace) return;
 
         GameObject prefabToSpawn = customerPrefabs[Random.Range(0, customerPrefabs.Length)];
         GameObject obj = Instantiate(prefabToSpawn, spawnPoint.position, Quaternion.identity);
 
         CustomerManager mover = obj.GetComponent<CustomerManager>();
         if (mover == null) mover = obj.AddComponent<CustomerManager>();
+
+        CustomerTimer timer = obj.GetComponent<CustomerTimer>();
+        if (timer != null)
+            timer.Initialize(currentMinPatience, currentMaxPatience);
 
         queue.Add(obj);
         RefreshQueuePositions();
@@ -74,12 +76,11 @@ public class CustomerQueue : MonoBehaviour
 
         DeliveryResult result = order.DeliverItem(player.heldItem);
 
-       if (result == DeliveryResult.WrongItem)
+        if (result == DeliveryResult.WrongItem)
         {
-            score.score -= 2.0f;
-
+            score.score -= 1.0f;
             frontTimer.MarkDisappointed();
-           
+
             if (player.currentHeldItem != null)
             {
                 Destroy(player.currentHeldItem);
@@ -107,9 +108,11 @@ public class CustomerQueue : MonoBehaviour
             RefreshQueuePositions();
 
             frontTimer.MarkServed();
-            score.score += 0.5f;
+            score.score += 0.25f;
+
+            if (phaseManager != null)
+                phaseManager.OnCustomerServed();
         }
-        
     }
 
     void RefreshQueuePositions()
@@ -121,7 +124,7 @@ public class CustomerQueue : MonoBehaviour
 
             if (timer.isDisapointed == true)
             {
-                score.score -= 1f;
+                score.score -= 0.5f;
                 GameObject leavingCustomer = queue[i];
                 queue.RemoveAt(i);
                 StartCoroutine(LeaveAndDestroy(leavingCustomer));
@@ -134,9 +137,11 @@ public class CustomerQueue : MonoBehaviour
 
     IEnumerator LeaveAndDestroy(GameObject customer)
     {
+        leavingCount++;
+
         Transform chosenExit = (Random.value < 0.5f) ? exitPointLeft : exitPointRight;
 
-        SpriteRenderer sr = customer.GetComponent<SpriteRenderer>();
+        SpriteRenderer sr = customer.GetComponentInChildren<SpriteRenderer>();
         if (sr != null)
             sr.flipX = (chosenExit == exitPointLeft);
 
@@ -148,6 +153,7 @@ public class CustomerQueue : MonoBehaviour
             yield return null;
         }
 
+        leavingCount--;
         Destroy(customer);
     }
 }

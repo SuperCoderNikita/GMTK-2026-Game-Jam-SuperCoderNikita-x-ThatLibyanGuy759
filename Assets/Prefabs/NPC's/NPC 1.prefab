@@ -79,7 +79,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 3
   m_MaskInteraction: 0
   m_Sprite: {fileID: 5105296558066790894, guid: 204750b15206f7747ba108fca54df123, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -204,8 +204,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5b0b9eee2dda3439fa75ecbbcbf722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  minBaseTime: 155
-  maxBaseTime: 165
+  minBaseTime: 50
+  maxBaseTime: 60
   timeToCook: 90
   timerText: {fileID: 889238707790723614}
   isDisapointed: 0
@@ -515,7 +515,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 3
+  m_SortingOrder: 4
   m_MaskInteraction: 0
   m_Sprite: {fileID: 6234330970754847308, guid: ca3ca6442b3009b4491b8b8ee42a385a, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -590,7 +590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3201276052821248581, guid: 1776961122670ec4f84918c627e327f6, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7657045308004142510, guid: 1776961122670ec4f84918c627e327f6, type: 3}
       propertyPath: m_Name
@@ -621,15 +621,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25710317
+      value: 0.3229987
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25710317
+      value: 0.3229987
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.25710317
+      value: 0.3229987
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -673,7 +673,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3201276052821248581, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7657045308004142510, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_Name

@@ -14,27 +14,36 @@ public class CustomerOrder : MonoBehaviour
     public GameObject orderBubble;
     public CustomerTimer status;
 
+    [Range(0f, 1f)]
+    public float pizzaChance = 0.2f; // lower = rarer pizza orders
+
     private bool receivedBurger;
     private bool receivedSoda;
     private bool receivedPizza;
 
     void Awake()
     {
-        // pick 2 distinct items out of 3: 0 = Burger, 1 = Soda, 2 = Pizza
-        int first = Random.Range(0, 3);
-        int second;
-        do { second = Random.Range(0, 3); } while (second == first);
+        bool includesPizza = Random.value < pizzaChance;
 
-        wantsBurger = (first == 0 || second == 0);
-        wantsSoda = (first == 1 || second == 1);
-        wantsPizza = (first == 2 || second == 2);
+        if (includesPizza)
+        {
+            wantsPizza = true;
+            wantsBurger = Random.value < 0.2f;
+            wantsSoda = !wantsBurger;
+        }
+        else
+        {
+            wantsPizza = false;
+            wantsBurger = true;
+            wantsSoda = true;
+        }
 
         UpdateIcons();
     }
 
     void Update()
     {
-        if(status.isDisapointed)
+        if (status.isDisapointed)
         {
             burgerIcon.SetActive(false);
             sodaIcon.SetActive(false);
@@ -73,7 +82,7 @@ public class CustomerOrder : MonoBehaviour
         if (!matched) return DeliveryResult.WrongItem;
 
         bool complete = (!wantsBurger || receivedBurger) && (!wantsSoda || receivedSoda) && (!wantsPizza || receivedPizza);
-        if(complete) 
+        if (complete)
             orderBubble.SetActive(false);
 
         UpdateIcons();

@@ -6,7 +6,8 @@ public class PizzaOven : MonoBehaviour
 {
     public float interactRadius = 1.5f;
     public PlayerManager player;
-    public Transform hoverPoint;      // where the finished pizza waits, above the oven
+    public Transform hoverPoint;     
+    public GameObject checkPrefab;
     public GameObject pizzaPrefab;
     private float cookTime = 4f;
 
@@ -36,7 +37,7 @@ public class PizzaOven : MonoBehaviour
         float distance = Vector2.Distance(player.transform.position, transform.position);
         if (distance > interactRadius) return;
 
-        // Drop off tomato
+
         if (player.heldItem == HeldItem.Tomato && !hasTomato && hoveringItem == null && !isProcessing)
         {
             DepositItem();
@@ -45,7 +46,7 @@ public class PizzaOven : MonoBehaviour
             return;
         }
 
-        // Drop off cheese
+
         if (player.heldItem == HeldItem.Cheese && !hasCheese && hoveringItem == null && !isProcessing)
         {
             DepositItem();
@@ -54,7 +55,7 @@ public class PizzaOven : MonoBehaviour
             return;
         }
 
-        // Drop off bread
+
         if (player.heldItem == HeldItem.Bread && !hasBread && hoveringItem == null && !isProcessing)
         {
             DepositItem();
@@ -63,7 +64,7 @@ public class PizzaOven : MonoBehaviour
             return;
         }
 
-        // Pick up the finished pizza
+
         if (hoveringItem != null && player.heldItem == HeldItem.None)
         {
             PickupPizza();
@@ -91,11 +92,11 @@ public class PizzaOven : MonoBehaviour
     IEnumerator CookPizza()
     {
         isProcessing = true;
-        cookTime = baseCookTime; // reset the countdown fresh for this cook
+        cookTime = baseCookTime;
 
-        yield return new WaitForSeconds(baseCookTime); // use the fixed value, not the draining one
+        yield return new WaitForSeconds(baseCookTime); 
 
-        hoveringItem = Instantiate(pizzaPrefab, hoverPoint.position, Quaternion.identity, hoverPoint);
+        hoveringItem = Instantiate(checkPrefab, hoverPoint.position, Quaternion.identity, hoverPoint);
         isProcessing = false;
 
         hasTomato = false;

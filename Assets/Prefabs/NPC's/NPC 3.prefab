@@ -217,10 +217,10 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 2771571700585188991}
   - {fileID: 7817313026795568861}
   - {fileID: 7659427815021324930}
   - {fileID: 687131432492449754}
-  - {fileID: 3896987885247874601}
   - {fileID: 2128259159470068112}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -296,8 +296,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5b0b9eee2dda3439fa75ecbbcbf722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  minBaseTime: 155
-  maxBaseTime: 165
+  minBaseTime: 50
+  maxBaseTime: 60
   timeToCook: 90
   timerText: {fileID: 7652168981892961115}
   isDisapointed: 0
@@ -321,7 +321,7 @@ MonoBehaviour:
   wantsSoda: 0
   wantsPizza: 0
   burgerIcon: {fileID: 3159494089901322253}
-  sodaIcon: {fileID: 8781332069781645308}
+  sodaIcon: {fileID: 7620080599461539754}
   pizzaIcon: {fileID: 2573178197605162760}
   orderBubble: {fileID: 1228824220181106058}
   status: {fileID: 4360277085440989408}
@@ -528,7 +528,7 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_renderer: {fileID: 2089411617963265544}
   m_maskType: 0
---- !u!1001 &1413783792928959058
+--- !u!1001 &287312065543578116
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -538,15 +538,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.25710317
+      value: 0.3229987
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.25710317
+      value: 0.3229987
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.25710317
+      value: 0.3229987
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_LocalPosition.x
@@ -590,7 +590,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3201276052821248581, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_SortingOrder
-      value: 3
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 7657045308004142510, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
       propertyPath: m_Name
@@ -601,15 +601,15 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
---- !u!4 &3896987885247874601 stripped
+--- !u!4 &2771571700585188991 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2705015259064659067, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
-  m_PrefabInstance: {fileID: 1413783792928959058}
+  m_PrefabInstance: {fileID: 287312065543578116}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &8781332069781645308 stripped
+--- !u!1 &7620080599461539754 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7657045308004142510, guid: 98596055c5c39e24bbd2f5edc3c381c4, type: 3}
-  m_PrefabInstance: {fileID: 1413783792928959058}
+  m_PrefabInstance: {fileID: 287312065543578116}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &5329598720195531430
 PrefabInstance:

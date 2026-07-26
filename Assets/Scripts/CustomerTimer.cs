@@ -3,13 +3,13 @@ using TMPro;
 
 public class CustomerTimer : MonoBehaviour
 {
-    public float minBaseTime =120f;
-    public float maxBaseTime = 165f;
+    public float minBaseTime = 60f;
+    public float maxBaseTime = 120f;
     public float timeToCook;
     public TextMeshPro timerText; 
     public bool isDisapointed = false;
     public bool isServed = false;
-    public float difficultyRampRate = 10f;
+    public float difficultyRampRate = 0f; 
     public float minStartingTime = 10f;
     private float reduction;
     private float rolledBaseTime;
@@ -24,9 +24,21 @@ public class CustomerTimer : MonoBehaviour
         isServed = false;
         isDisapointed = false;
 
+        RollTime();
+    }
+
+    void RollTime()
+    {
         rolledBaseTime = Random.Range(minBaseTime, maxBaseTime);
         reduction = Time.timeSinceLevelLoad * difficultyRampRate;
         timeToCook = Mathf.Max(rolledBaseTime - reduction, minStartingTime);
+    }
+
+    public void Initialize(float minTime, float maxTime)
+    {
+        minBaseTime = minTime;
+        maxBaseTime = maxTime;
+        RollTime();
     }
 
     public void MarkServed()
@@ -41,22 +53,22 @@ public class CustomerTimer : MonoBehaviour
     {
         if (isDisapointed)
             return; 
-
+ 
         if (isServed)
         {
             timeToCook = 999;
             return;
         }
-
+ 
         timeToCook -= Time.deltaTime;
-
+ 
         if (timeToCook <= 0)
         {
             timeToCook = 0;
             MarkDisappointed();
             return;
-        }
-
+        } 
+ 
         int minutes = Mathf.FloorToInt(timeToCook / 60);
         int seconds = Mathf.FloorToInt(timeToCook % 60);
         timerText.text = string.Format("{0}:{1:00}", minutes, seconds);

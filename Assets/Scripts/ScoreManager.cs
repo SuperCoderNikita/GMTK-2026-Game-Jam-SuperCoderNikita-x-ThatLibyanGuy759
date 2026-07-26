@@ -3,9 +3,9 @@ using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
-    public float score = 2.5f;
-    public Image[] starImages; // drag all 5 stars in, left to right
-    public float fillSpeed = 1f; // how fast the stars animate, in "stars per second"
+    public float score = 2f;
+    public Image[] starImages; 
+    public float fillSpeed = 1f;
 
     void Update()
     {
