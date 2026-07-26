@@ -399,8 +399,8 @@ Transform:
   m_LocalScale: {x: 6, y: 6, z: 6}
   m_ConstrainProportionsScale: 0
   m_Children:
+  - {fileID: 3427182975541691799}
   - {fileID: 1331320357615691857}
-  - {fileID: 225275484062766118}
   - {fileID: 8040037955856204673}
   - {fileID: 2287106174587125687}
   - {fileID: 4368930051351455953}
@@ -524,7 +524,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5b0b9eee2dda3439fa75ecbbcbf722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  minBaseTime: 120
+  minBaseTime: 155
   maxBaseTime: 165
   timeToCook: 90
   timerText: {fileID: 3488439708179801170}
@@ -550,7 +550,7 @@ MonoBehaviour:
   wantsPizza: 0
   burgerIcon: {fileID: 1023512522217033379}
   sodaIcon: {fileID: 5797260660106190434}
-  pizzaIcon: {fileID: 5542024535048304115}
+  pizzaIcon: {fileID: 6937412502725207106}
   orderBubble: {fileID: 101567549807539970}
   status: {fileID: 4360277085440989408}
 --- !u!95 &640445480202798359
@@ -575,7 +575,7 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!1001 &2786166657354381405
+--- !u!1001 &722240368013388268
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -585,19 +585,19 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.044445213
+      value: 0.38128
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.039657895
+      value: 0.38128
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.073026754
+      value: 0.027843641
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -0.21836998
+      value: -0.2185
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
       propertyPath: m_LocalPosition.y
@@ -637,22 +637,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7657045308004142510, guid: 1776961122670ec4f84918c627e327f6, type: 3}
       propertyPath: m_Name
-      value: Proto pizza
+      value: Pizza Icon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1776961122670ec4f84918c627e327f6, type: 3}
---- !u!4 &225275484062766118 stripped
+--- !u!4 &3427182975541691799 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
-  m_PrefabInstance: {fileID: 2786166657354381405}
+  m_PrefabInstance: {fileID: 722240368013388268}
   m_PrefabAsset: {fileID: 0}
---- !u!1 &5542024535048304115 stripped
+--- !u!1 &6937412502725207106 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 7657045308004142510, guid: 1776961122670ec4f84918c627e327f6, type: 3}
-  m_PrefabInstance: {fileID: 2786166657354381405}
+  m_PrefabInstance: {fileID: 722240368013388268}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &4194905112471229388
 PrefabInstance:

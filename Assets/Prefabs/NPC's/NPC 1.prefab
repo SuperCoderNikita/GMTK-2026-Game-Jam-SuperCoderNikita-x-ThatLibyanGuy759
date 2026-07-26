@@ -251,7 +251,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5f5b0b9eee2dda3439fa75ecbbcbf722, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  minBaseTime: 120
+  minBaseTime: 155
   maxBaseTime: 165
   timeToCook: 90
   timerText: {fileID: 889238707790723614}
@@ -585,15 +585,15 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
       propertyPath: m_LocalScale.x
-      value: 0.044445213
+      value: 0.38128
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
       propertyPath: m_LocalScale.y
-      value: 0.039657895
+      value: 0.38128
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
       propertyPath: m_LocalScale.z
-      value: 0.073026754
+      value: 0.027843641
       objectReference: {fileID: 0}
     - target: {fileID: 2705015259064659067, guid: 1776961122670ec4f84918c627e327f6, type: 3}
       propertyPath: m_LocalPosition.x
@@ -637,7 +637,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7657045308004142510, guid: 1776961122670ec4f84918c627e327f6, type: 3}
       propertyPath: m_Name
-      value: Proto pizza
+      value: Pizza Icon
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
